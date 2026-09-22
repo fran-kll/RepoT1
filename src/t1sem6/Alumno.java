@@ -86,7 +86,51 @@ public class Alumno
     public void setTipo_beca(String tipo_beca) {
         this.tipo_beca = tipo_beca;
     }
+   
+    public void validarIdentidad()
+    {
+        tipo_doc = tipo_doc.toUpperCase();
 
-    
-    
+        if(tipo_doc.equals("DNI"))
+        {
+            if(this.nro_doc.length() == 8)
+            {
+                System.out.println("Valido");
+            }
+            else
+            {
+                System.out.println("Tamaño inválido");
+            }
+        }
+    }
+    public void validarNivelSocial()
+        {
+            nivel_social = nivel_social.toUpperCase();
+
+            if(nivel_social.equals("A") ||
+               nivel_social.equals("B") ||
+               nivel_social.equals("C"))
+            {
+                System.out.println("Es válido");
+            }
+            else
+            {
+                System.out.println("Inválido, selecione una de las opciones mostradas");
+            }
+        }
+        public void validarBeca()
+        {
+            tipo_beca = tipo_beca.toUpperCase();
+
+            if(tipo_beca.equals("PARCIAL") ||
+               tipo_beca.equals("TOTAL"))
+            {
+                System.out.println("Tipo de beca válido");
+            }
+            else
+            {
+                System.out.println("Tipo de beca inválido");
+            }
+        }
+        
 }
