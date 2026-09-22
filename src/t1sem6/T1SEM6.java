@@ -18,6 +18,8 @@ public class T1SEM6 {
     public static void main(String[] args)
     {
         // TODO code application logic here
+        // Sistema de registro t1
+        //Comentario para hacer un commit porque me falta 1 para los 6
         Scanner sc = new Scanner(System.in);
         AlumnoController ac = new AlumnoController();
         System.out.println("Ingrese el nombre:");
