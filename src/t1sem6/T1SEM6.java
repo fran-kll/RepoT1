@@ -31,7 +31,39 @@ public class T1SEM6 {
         System.out.println("Ingrese el número de documento:");
         String nd = sc.nextLine();
         
-        
+        while(td.equalsIgnoreCase("DNI") && nd.length() != 8)
+        {
+            System.out.println("DNI inválido, debe tener 8 dígitos.");
+            System.out.println("Ingrese nuevamente el número de documento:");
+            nd = sc.nextLine();
+        }
+        System.out.println("Ingrese el nivel socioeconómico (A, B o C):");
+        String ns = sc.nextLine();
+        while(!ns.equalsIgnoreCase("A") &&
+              !ns.equalsIgnoreCase("B") &&
+              !ns.equalsIgnoreCase("C"))
+        {
+            System.out.println("Nivel inválido. Ingrese A, B o C:");
+            ns = sc.nextLine();
+        }
+        System.out.println("Ingrese el tipo de beca (Parcial o Total):");
+        String tb = sc.nextLine();
+        while(!tb.equalsIgnoreCase("Parcial") &&
+              !tb.equalsIgnoreCase("Total"))
+        {
+            System.out.println("Beca inválida. Ingrese Parcial o Total:");
+            tb = sc.nextLine();
+        }
+        Alumno a = new Alumno(n, ap, am, td, nd, ns, tb);
+
+        a.validarIdentidad();
+        a.validarNivelSocial();
+        a.validarBeca();
+
+        ac.agregarAlumno(a);
+
+        System.out.println(" Alumno registrado correctamente");
+        ac.listarAlumnos();
     }
     
 }
